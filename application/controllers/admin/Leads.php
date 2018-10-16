@@ -86,6 +86,14 @@ class Leads extends Admin_Controller
         
     }
 
+    public function vin_decoder() {
+        $data['title'] = "Vin Decoder";
+        $data['assign_user'] = $this->items_model->allowad_user('55');
+
+        $data['subview'] = $this->load->view('admin/leads/vin_decoder', $data, TRUE);
+        $this->load->view('admin/_layout_main', $data); //page load
+    }
+
     public function import_leads()
     {
         $data['title'] = lang('import_leads');
